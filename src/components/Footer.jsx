@@ -50,7 +50,7 @@ const Footer = () => {
             </div>
             </div>
             <div className="py-[56px]">
-              <img className=' ' src={logo1} alt="" />
+              <img className='' src={logo1} alt="" />
               <p className= ' w-[90%] lg:w-full pt-5 lg:pt-[211px] font-dm font-normal text-[14px] text-[#5e5d5d]'>2020 Orebi Minimal eCommerce Figma Template by Adveits</p>
             </div>  
             </div>
