@@ -7,6 +7,7 @@ import { MdOutlineArrowDropDown } from "react-icons/md";
 import { FaShoppingCart } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
 import { ImCross } from "react-icons/im";
+import { Link } from 'react-router-dom';
 
 const Nav = () => {
     let [cartshow, setcartshow] = useState (false)
@@ -34,7 +35,6 @@ const Nav = () => {
         }else{
             setcartass(false) 
         }
-
      })
     },[cartshow,cartacc,cartass])
 
@@ -79,8 +79,11 @@ const Nav = () => {
                 {cartacc &&
                 <div className=" bg-[#222] w-[120%] lg:w-[40%] absolute top-7 lg:left-[300px] left-[-50px] lg:right-0 z-50">
                 <ul>
-                    <li className=' text-[#777676] py-2 pl-3 text-base font-dm font-medium hover:text-white hover:pl-7 duration-300 ease-in'><a href="#"> My Account</a></li>
-                    <li className=' text-[#777676] py-2 pl-3 text-base font-dm font-medium hover:text-white hover:pl-7 duration-300 ease-in' ><a href="#">Login</a></li>
+                    <Link to="/Myaccount">
+                    <li className=' text-[#777676] py-2 pl-3 text-base font-dm font-medium hover:text-white hover:pl-7 duration-300 ease-in'><a > My Account</a></li></Link>
+                    <Link to="/Loging">
+                    <li className=' text-[#777676] py-2 pl-3 text-base font-dm font-medium hover:text-white hover:pl-7 duration-300 ease-in' >Loging</li>
+                    </Link>
                 </ul>
             </div>
                 }
@@ -114,10 +117,7 @@ const Nav = () => {
                    }
                 
                 </div>
-            </div>
-
-
-            
+            </div> 
             </Flex>
         </Container>
     </section>

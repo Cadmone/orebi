@@ -1,11 +1,8 @@
 import React from 'react'
           
-    const PaginationNum = ({totalpage,parpage,paginate,next,Previous,currentpage}) => {
+    const PaginationNum = ({pageNumber,paginate,next,Previous,currentpage}) => {
         console.log(currentpage);
-     let pageNumber= [] 
-     for(let i = 0; i < Math.ceil(totalpage / parpage); i++){
-        pageNumber.push(i)
-     }    
+       
   return (
    <>
 <nav aria-label="Page navigation example">
@@ -24,8 +21,6 @@ import React from 'react'
       <a >{item + 1}</a> 
     </li>
     ))}
-
-{/* flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 */}
     
 <li onClick={next}>
 <a  class="flex items-center justify-center px-3 h-10 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
