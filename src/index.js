@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import "slick-carousel/slick/slick.css";
 import { ContextApi } from './components/ContextApi';
-import store from '../src/Store'
+import store from './Store'
 import { Provider } from 'react-redux'
 
 

@@ -107,15 +107,18 @@ const Nav = () => {
                     <div className=" pt-7 pl-[15px]">
                         <p className=' text-white font-dm font-medium text-lg'>Subtotal: $44.00</p>
                     </div>
-                    <div className=" flex justify-between px-4 pt-3">
-                    <a className=' py-[16px] px-[40px] text-white font-dm font-medium text-base border-[#fff] border-2 hover:bg-[#fff] hover:text-black' href="#">View Cart</a>
-                    <a className=' py-[16px] px-[40px] text-white font-dm font-medium text-base border-[#fff] border-2 hover:bg-[#fff] hover:text-black' href="#">Checkout</a>
+                    <div className=" flex justify-between pt-9 px-4 py-4 ">
+                        <Link to="/Cart">
+                    <a className=' py-[16px] mt-[50px] px-[40px] text-white font-dm font-medium text-base border-[#fff] border-2 hover:bg-[#fff] hover:text-black' >View Cart</a>
+                    </Link>
+                    <Link to="">
+                    <a className=' py-[16px] px-[40px] text-white font-dm font-medium text-base border-[#fff] border-2 hover:bg-[#fff] hover:text-black'>Checkout</a>
+                    </Link>
                     </div>
                 </div>
                 </div>
                </div>
                    }
-                
                 </div>
             </div> 
             </Flex>

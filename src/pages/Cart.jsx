@@ -4,10 +4,14 @@ import { Link } from 'react-router-dom';
 import { ImCross } from "react-icons/im";
 import card1 from "../assets/card.png"
 import { FaPlus , FaMinus, FaCaretDown } from "react-icons/fa6";
+import { useSelector } from 'react-redux';
 
 
 const Cart = () => {
-  return (
+   let data = useSelector((state) => state)
+   console.log(data.single);
+
+ return (
     <Container>
         <div className="">
             <h2 className='text-[49px] font-dm font-bold text-black pt-[124px]'>Cart</h2>
@@ -39,13 +43,13 @@ const Cart = () => {
                 <i className='text-gr cursor-pointer'><FaMinus /></i>
             </div>
             </div>
-            <div className="">
+           <div className="">
                 <p className='font-dm font-bold text-[20px] leading-[26.04px] text-bl'>$44.00</p>
             </div>
         </div>
 
 
-        <div className=" flex justify-between items-center border-[#dbd9d9]">
+        <div className=" mt-7 flex justify-between items-center border-[1px] border-[#eceaea] py-3 px-3">
                 <div className=" flex items-center">
                 <div className=" w-[255px] h-[50px] flex justify-between  border-[1px] items-center ">
                     <h3 className='font-dm font-normal text-[16px] leading-[30px] text-gr'>SIZE</h3>
@@ -61,16 +65,16 @@ const Cart = () => {
             </div>
 
             <div className="w-full flex justify-end py-[64px]">
-            <div className="w-[40%] relative ">
-                <h5 className='absolute left-[178px] top-[-34px] font-dm font-bold text-[20px] leading-[26.04px] text-bl'>Cart totals</h5>
+            <div className="w-[40%] relative pt-8 ">
+                <h5 className='absolute right-0 top-[-34px] font-dm font-bold text-[20px] leading-[26.04px] text-bl'>Cart totals</h5>
                 <div className="w-[40%] ">
-                <div className=" flex  items-center justify-around">
-                    <h6 className='border-[1px] border-[#F0F0F0] p-3 font-dm font-bold text-[16px] leading-[23px] text-bl'>Subtotal</h6>
-                    <p className='border-[1px] border-[#F0F0F0] p-3 font-dm font-normal text-[16px] leading-[30px] text-gr'> 00000 $ </p>
+                <div className=" flex  items-center justify-between  border-[1px] w-[610px]" >
+                    <h6 className=' border-[#F0F0F0] p-4 font-dm font-bold text-[16px] leading-[23px] text-bl  '>Subtotal</h6>
+                    <p className=' border-[#F0F0F0] pr-[150px] font-dm font-normal text-[16px] leading-[30px] text-gr right-[100px]'> 00000 $ </p>
                 </div>
-                <div className=" flex  items-center ">
-                    <h6 className='border-[1px] border-[#F0F0F0] p-3 font-dm font-bold text-[16px] leading-[23px] text-bl'>Total</h6>
-                    <p className='border-[1px] border-[#F0F0F0] p-3 font-dm font-normal text-[16px] leading-[30px] text-gr'>33333$</p>
+                <div className="  flex  items-center justify-between  border-[1px] w-[610px] ">
+                    <h6 className=' border-[#F0F0F0] p-3 font-dm font-bold text-[16px] leading-[23px] text-bl'>Total</h6>
+                    <p className=' border-[#F0F0F0] p-3 font-dm font-normal text-[16px] leading-[30px] text-gr pr-[150px]'>33333$</p>
                 </div>
                 <Link>
                 <div className=" w-[200px] mt-5 h-[50px] bg-[#262626] flex items-center justify-center">  
@@ -79,14 +83,87 @@ const Cart = () => {
                  </Link>
                 </div>
                  </div>
-                
+               
         </div>
+     
       
-       
 
-    
+   
     </Container>
-  )
-}
+ ) }
 
-export default Cart
+export default Cart 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

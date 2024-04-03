@@ -18,7 +18,8 @@ const Product = () => {
   let allpage = data.slice(firstpage, lestpage)
   let [showicon, setshowicon] = useState(false)
   let [show, setshow] = useState(false)
-  let catone = useRef()
+  let cateone = useRef()
+
 
 
   let paginate = (pageNumber)=>{
@@ -42,7 +43,7 @@ const Product = () => {
   }
   useEffect(()=>{
     document.addEventListener("click", (e)=>{
-      if(catone.current.contains(e.target) ==true){
+      if(cateone.current &&  cateone.current.contains(e.target) == true) {
       setshow(!show)
       setshowicon(!showicon)
       }else{
@@ -59,7 +60,7 @@ const Product = () => {
           <div className=" w-[20%]">
             <h2 className=' text-[20px] font-dm font-bold text-black pt-[233px]'>Shop by Category</h2>
             <div className=" flex justify-between items-center pt-5 pr-4 ">
-              <h4 ref={catone} className=' text-[16px] font-dm font-normal text-black' >Category 1</h4>
+              <h4 ref={cateone} className=' text-[16px] font-dm font-normal text-black' >Category 1</h4>
               {showicon ? <FaMinus /> : <FaPlus />}
             </div>
             {show && 
