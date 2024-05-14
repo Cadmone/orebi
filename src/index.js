@@ -5,8 +5,9 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import "slick-carousel/slick/slick.css";
 import { ContextApi } from './components/ContextApi';
-import store from './Store'
+import store from './store'
 import { Provider } from 'react-redux'
+import firebaseConfig from './firabase.config';
 
 
 
@@ -18,6 +19,7 @@ root.render(
       <App />
       </ContextApi>
       </Provider>
+      
     
   
       

@@ -1,9 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Container from '../components/Container'
 import { Link } from 'react-router-dom'
 
 const Signup = () => {
-  
+  let [fullname, setfullname ] = useState("")
+  let [email, setemail ] = useState("")
+  let [Password, setPassword ] = useState("")
+  let handleFirstName = (e) =>{
+    setfullname(e.target.value);
+  }
+  let handleemail = (e) =>{
+    setemail(e.target.value);
+  }
+  let handlePassword = (e) =>{
+    setPassword(e.target.value);
+  }
+  let handelsubmit = (e) =>{
+    e.preventdefault();
+    console.log("ami");
+  }
+   
   return (
     <div className='py-[48px]'>
       <Container>
@@ -17,7 +33,10 @@ const Signup = () => {
       <div className="flex items-center justify-start flex-wrap pt-[42px] gap-x-8">
         <div className=""> 
          <h3 className='font-dm text-[16px] font-bold text-bl leading-[23px] '  >First Name</h3>
-         <input type="text"  class=" lg:w-[100%]  border-1 border-[#FFFFFF]  outline-1       h-[40px] w-[400px]  "  maxlength="300" name="inputData"   placeholder='First Name'   ></input> 
+         <input type="text"  class=" lg:w-[100%]  border-1 border-[#FFFFFF]  outline-1       h-[40px] w-[400px]  "  maxlength="300" name="inputData"   placeholder='First Name' 
+         onChange={handleFirstName}
+         >
+          </input> 
          </div>
         <div className=" ">
         <h3 className='font-dm text-[16px] font-bold text-bl leading-[23px] '  >Last Name</h3>
@@ -29,7 +48,10 @@ const Signup = () => {
       <div className="flex items-center justify-start flex-wrap pt-[42px] gap-x-8">
         <div className=""> 
          <h3 className='font-dm text-[16px] font-bold text-bl leading-[23px] '  >Email address</h3>
-         <input type="text"  class=" lg:w-[100%]  border-1 border-[#FFFFFF]  outline-1 h-[40px] w-[400px] "  maxlength="300" name="inputData"   placeholder='company@domain.com'    ></input> 
+         <input type="text"  class=" lg:w-[100%]  border-1 border-[#FFFFFF]  outline-1 h-[40px] w-[400px] "  maxlength="300" name="inputData"   placeholder='junayedalmahmud34@gmail.com' 
+         onChange={handleemail}
+         >
+          </input> 
          </div>
         <div className = "" >
         <h3 className='font-dm text-[16px] font-bold text-bl leading-[23px] '  >Telephone</h3>
@@ -46,7 +68,7 @@ const Signup = () => {
       <div className="flex items-center justify-start flex-wrap pt-[42px] gap-x-8">
         <div className=""> 
          <h3 className='font-dm text-[16px] font-bold text-bl leading-[23px] '  >Address 1</h3>
-         <input type="text"  class=" lg:w-full h-[40px] w-[400px] border-1 border-[#FFFFFF]  outline-2 placeholder:text-gr     "  maxlength="400" name="inputData"   placeholder='4279 Zboncak Port Suite 6212'></input> 
+         <input type="text"  class=" lg:w-full h-[40px] w-[400px] border-1 border-[#FFFFFF]  outline-2 placeholder:text-gr     "  maxlength="400" name="inputData"   placeholder='Address'></input> 
          </div>
         <div className=" ">
         <h3 className='font-dm text-[16px] font-bold text-bl leading-[23px] '  >Address 2</h3>
@@ -61,7 +83,7 @@ const Signup = () => {
          </div>
         <div className=" ">
         <h3 className='font-dm text-[16px] font-bold text-bl leading-[23px] ' >Post Code</h3>
-        <input type="text"  class=" lg:w-[100%] border-1 border-[#FFFFFF]  outline-1    h-[40px] w-[400px]  "  maxlength="300" name="inputData"   placeholder='05228'/> <hr />
+        <input type="text"  class=" lg:w-[100%] border-1 border-[#FFFFFF]  outline-1    h-[40px] w-[400px]  "  maxlength="300" name="inputData"   placeholder='Post Code'/> <hr />
         </div>
         
       </div>
@@ -95,7 +117,13 @@ const Signup = () => {
       <div className="flex items-center justify-start flex-wrap pt-[42px] gap-x-8">
         <div className=""> 
          <h3 className='font-dm text-[16px] font-bold text-bl leading-[23px] '  >Password</h3>
-         <input type="text"  class=" lg:w-[100%]  border-1 border-[#FFFFFF]  outline-1    h-[40px] w-[400px]  "  maxlength="300" name="inputData"    placeholder='Password'></input> 
+         <input type="text"
+           class=" lg:w-[100%]  border-1 border-[#FFFFFF]  outline-1    h[40px] w-[400px]  "  maxlength="300"
+            name="inputData" 
+           placeholder='Password'
+           onChange={handlePassword}
+         >
+          </input> 
          </div>
         <div className=" ">
         <h3 className='font-dm text-[16px] font-bold text-bl leading-[23px] '  >Repeat Password</h3>
@@ -115,11 +143,17 @@ const Signup = () => {
         <h6 className='font-dm text-[14px] font-normal text-gr leading-[18.23px]'>No</h6>
       </div>
       <div className='pt-[29px]'>
+        <div onClick={handelsubmit}>
+      <Link>
       <h3 class="py-[16px] px-[77px] bg-[#000] font-dm text-[16px] text-[#FFFFFF] border-[1px] border-[#2B2B2B] inline-block cursor-pointer font-bold hover:bg-white hover:text-[#000]  ">Signin</h3>
+      </Link>
       </div>
-      <div className=" mt-5">
-      <span className='font-dm text-[15px] font-normal text-gr leading-[18.23px] pb-9'> Already have account ? Please <Link to="/login"> Login</Link></span>
       </div>
+      <div className="mt-5">
+      <span   className='font-dm text-[15px] font-normal text-gr leading-[18.23px] pb-9'> Already have account ? Please
+       <Link to="/loging"> Loging </Link></span>
+      </div>
+    
       </Container>
     </div>
   )

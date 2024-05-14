@@ -1,5 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit'
-import { singleSlice } from './components/slice/SingleSlice'
+import singleSlice from './assets/slice/singleSlice'
+
+
 
 export default configureStore({
   reducer: {

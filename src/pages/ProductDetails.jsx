@@ -5,10 +5,9 @@ import Container from '../components/Container';
 import { FaRegStar,FaStarHalf,FaStar  } from "react-icons/fa";
 import { FaPlus,FaMinus  } from "react-icons/fa";
 import { useDispatch } from 'react-redux';
-import { addToCart } from '../components/slice/SingleSlice';
-
-
-
+import { addToCart } from '../assets/slice/singleSlice';
+ 
+ 
 const ProductDetail = () => {
    let dispatch = useDispatch()
    let [show,setshow] = useState(false)  
@@ -22,7 +21,7 @@ const ProductDetail = () => {
    let productId = useParams()
 
    let handleproduct = (item) =>{
-      dispatch(addToCart())
+      dispatch(addToCart ({...item, qun:1}))
    }
 
    let dataId = () =>{
@@ -94,10 +93,15 @@ return (
             </div> <hr />
             <div className='flex gap-4 pt-[25px] pb-[25px]'>
                <div className=''>
-                <Link to=" " className='py-3 px-3 lg:px-8 border-2 border-[#262626] font-dm font-bold text-[12px] lg:text-[16px] line-height:[23px] text-[#262626] hover:text-[#ffff]  hover:bg-[#262626] hover:border-transparent duration-300'>Add to Wish List</Link>
+                <Link to=" ">
+                  <li className='py-3 px-3 lg:px-8 border-2 border-[#262626] font-dm font-bold text-[12px] lg:text-[16px] line-height:[23px] text-[#262626] hover:text-[#ffff]  hover:bg-[#262626] hover:border-transparent duration-300 list-none'>Add to Wish List
+                </li>
+                </Link>
                </div>
                <div className=''>
-                <Link onClick={()=>handleproduct(data)} className='py-3 px-7 lg:px-12 border-2 border-[#262626] font-dm font-bold text-[12px] lg:text-[16px] line-height:[23px] text-[#262626] hover:text-[#ffff]  hover:bg-[#262626] hover:border-transparent duration-300'>Add to Cart</Link>
+                <Link to="/cart">
+                   <li onClick={()=>handleproduct(data)} className='py-3 px-7 lg:px-12 border-2 border-[#262626] font-dm font-bold text-[12px] lg:text-[16px] line-height:[23px] text-[#262626] hover:text-[#ffff]  hover:bg-[#262626] hover:border-transparent duration-300 list-none'>Add to Cart</li>
+                </Link>
                </div>
             </div> <hr />
             <div ref={plusRef} className='flex justify-between item-center pt-[10px] lg:pt-[20px] pb-[10px] lg:pb-[20px] cursor-pointer'>

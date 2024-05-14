@@ -8,8 +8,10 @@ import { FaShoppingCart } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
 import { ImCross } from "react-icons/im";
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const Nav = () => {
+    let data = useSelector((state)=>state.single.cartItem)
     let [cartshow, setcartshow] = useState (false)
     let [cartacc, setcartacc] = useState (false)
     let [cartass, setcartass] = useState (false)
@@ -91,33 +93,39 @@ const Nav = () => {
                  <FaShoppingCart/>
                 </div>
                 {cartass && 
-                <div className=" bg-[#222] w-full absolute top-10 left-0 z-50" >
-                <div className=" py-6">
-                <div className="flex items-center justify-between px-[10px]">
-                    <div className=" pl-[80px] pt-[80px] bg-[#625f5f]"></div>
-                    <div className="">
-                        <p className=' text-[#fff] font-dm text-base font-medium'>Black Smart Watch</p>
-                        <p className=' text-[#fff] font-dm text-base font-medium'>$44.00</p>
-                    </div>
-                    <div className=" text-white">
-                    <ImCross />
-                    </div>
-                </div>
-                <div className="">
-                    <div className=" pt-7 pl-[15px]">
-                        <p className=' text-white font-dm font-medium text-lg'>Subtotal: $44.00</p>
-                    </div>
-                    <div className=" flex justify-between pt-9 px-4 py-4 ">
-                        <Link to="/Cart">
-                    <a className=' py-[16px] mt-[50px] px-[40px] text-white font-dm font-medium text-base border-[#fff] border-2 hover:bg-[#fff] hover:text-black' >View Cart</a>
-                    </Link>
-                    <Link to="">
-                    <a className=' py-[16px] px-[40px] text-white font-dm font-medium text-base border-[#fff] border-2 hover:bg-[#fff] hover:text-black'>Checkout</a>
-                    </Link>
-                    </div>
-                </div>
-                </div>
-               </div>
+                
+                    <div className=" bg-[#222] w-full absolute top-10 left-0 z-50" >
+                        {data.map((itme)=>(
+                            <div className=" py-6">
+                            <div className="flex items-center justify-between px-[10px]">
+                                <div className=""> <img src={itme.thumbnail} className='h-[70px] w-[100px] ' alt="" /></div>
+                                <div className="">
+                                    <p className=' text-[#fff] font-dm text-base font-medium'>{itme.title} </p>
+                                    <p className=' text-[#fff] font-dm text-base font-medium'>${itme.price}</p>
+                                </div>
+                                <div className=" text-white">
+                                <ImCross />
+                                </div>
+                            </div>
+                            <div className="">
+                                <div className=" pt-7 pl-[15px]">
+                                    <p className=' text-white font-dm font-medium text-lg'>Subtotal: $44.00</p>
+                                </div>
+                                <div className=" flex justify-between pt-9 px-4 py-4 ">
+                                    <Link to="/Cart">
+                                <a className=' py-[16px] mt-[50px] px-[40px] text-white font-dm font-medium text-base border-[#fff] border-2 hover:bg-[#fff] hover:text-black' >View Cart</a>
+                                </Link>
+                                <Link to="/Checkout">
+                                <a className=' py-[16px] px-[40px] text-white font-dm font-medium text-base border-[#fff] border-2 hover:bg-[#fff] hover:text-black'>Checkout</a>
+                                </Link>
+                                </div>
+                            </div>
+                            </div>
+                        ))}
+                    
+                   </div>
+                
+                
                    }
                 </div>
             </div> 
